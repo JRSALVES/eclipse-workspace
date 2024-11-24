@@ -1,6 +1,7 @@
-package Aula1;
+package Aula_1;
 
-public class App {
+public class Executavel {
+	
     public static void main(String[] args) {
 
         Pessoa aluno1 = new Pessoa();
@@ -12,4 +13,5 @@ public class App {
         // Corrigido para melhorar a legibilidade da saída
         System.out.println("Nome: " + aluno1.getNome() + " \nSobrenome: " + aluno1.getSobrenome() + " \nIdade: " + aluno1.getIdade());
     }
+
 }
