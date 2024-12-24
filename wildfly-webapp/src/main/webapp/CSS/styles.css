@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* Estilo para o texto com classe 'small-blue-text' */
+.small-blue-text {
+    font-size: 10px; /* Tamanho da fonte pequeno */
+    color: blue;     /* Cor do texto azul */
+}
+
+/* Estilo para o texto com classe 'small-red-text' */
+.small-red-text {
+    font-size: 16px; /* Tamanho da fonte pequeno */
+    color: red;      /* Cor do texto vermelho */
+}
