@@ -1,0 +1,96 @@
+Este código HTML cria um formulário simples com três campos: **Nome**, **Login** e 
+**Senha**, e um botão de envio chamado "Salvar". Além disso, ele faz uso de um arquivo CSS externo 
+(`styles.css`) para estilizar o formulário. Vamos explicar cada parte do código:
+
+### 1. **Cabeçalho (`<head>`)**
+```html
+<head>
+    <title>Formulário</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+```
+- **`<title>Formulário</title>`**: Define o título da página, que aparecerá na aba do navegador. 
+Neste caso, o título será "Formulário".
+- **`<link rel="stylesheet" type="text/css" href="css/styles.css">`**: 
+Este link inclui o arquivo CSS externo (`styles.css`) para estilizar a página. 
+O arquivo CSS está localizado na pasta `css`.
+
+### 2. **Corpo da página (`<body>`)**
+```html
+<body>
+    <!-- Mini curso front-end -->
+    <form action="">
+        <!-- Criar uma tabela -->
+        <table class="form-table">
+            <!-- Criar uma linha na tabela -->
+            <tr>
+                <!-- Criar uma célula na linha -->
+                <td>Nome:</td>
+                <td><input type="text" id="nome" name="nome" class="input-field"></td>
+            </tr>
+
+            <tr>
+                <td>Login:</td>
+                <td><input type="text" id="login" name="login" class="input-field"></td>
+            </tr>
+
+            <tr>
+                <td>Senha:</td>
+                <td><input type="password" id="senha" name="senha" class="input-field"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <!-- Célula vazia para alinhamento -->
+                <td><input type="submit" value="Salvar" class="submit-button"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+```
+Aqui estão os detalhes do código dentro do corpo da página:
+
+- **`<form action="">`**: O elemento `<form>` define um formulário HTML. O atributo `action=""` 
+significa que, ao ser enviado, o formulário será enviado para a mesma página, ou seja, 
+sem redirecionamento, mas em um projeto real, você poderia definir uma URL de destino aqui.
+
+- **`<table class="form-table">`**: Cria uma tabela com a classe CSS `form-table`. A tabela é 
+usada para organizar os campos do formulário de maneira estruturada.
+
+- **Linhas e células da tabela**:
+  - **`<tr>`**: Define uma linha na tabela.
+  - **`<td>`**: Define uma célula dentro de uma linha da tabela. 
+  - **Primeira célula (Nome)**: 
+    - **`<td>Nome:</td>`**: Exibe o texto "Nome:".
+    - **`<td><input type="text" id="nome" name="nome" class="input-field"></td>`**: Cria um campo 
+    de entrada de texto para o nome do usuário. Ele possui um `id` e `name` para identificação e um 
+    `class="input-field"` que aplica o estilo da classe CSS `input-field` para o campo de texto.
+    
+  - **Outras células para Login e Senha**:
+    - Cada campo de entrada (Login e Senha) é semelhante ao campo de Nome, mas com o tipo de entrada 
+    diferente:
+    
+      - **`<input type="text">`**: Para o campo de Login, um campo de texto simples.
+      
+      - **`<input type="password">`**: Para o campo de Senha, um campo de senha, que oculta os 
+      caracteres digitados.
+      
+  - **Botão de envio (Salvar)**:
+    - **`<td><input type="submit" value="Salvar" class="submit-button"></td>`**: Cria o botão de 
+    envio do formulário. O atributo `type="submit"` indica que é um botão de envio, e o valor 
+    `Salvar` será exibido no botão. A classe CSS `submit-button` é aplicada para estilizar o 
+    botão de acordo com as regras definidas no arquivo CSS.
+
+### 3. **CSS**
+O código HTML se refere ao arquivo `styles.css`, que está localizado na pasta `css`. 
+As classes aplicadas aos elementos HTML (`form-table`, `input-field` e `submit-button`) 
+são definidas nesse arquivo CSS para determinar o estilo visual desses elementos.
+
+- **`form-table`**: Estilos aplicados à tabela que organiza os campos.
+- **`input-field`**: Estilos aplicados aos campos de entrada, como texto e senha.
+- **`submit-button`**: Estilos aplicados ao botão de envio do formulário.
+
+### Resumo:
+Este código cria um formulário simples com três campos de entrada (Nome, Login e Senha) e 
+um botão de envio. A tabela organiza os campos de maneira limpa e estruturada, e o CSS externo 
+é usado para estilizar o formulário, tornando-o mais atraente e fácil de usar.
