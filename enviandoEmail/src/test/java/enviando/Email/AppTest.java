@@ -20,41 +20,17 @@ public class AppTest {
 	private String senha = "krhh izcu inzf ybcy";
 
 	@org.junit.Test
-	public void testeEmail() {
-		try {
+	public void testeEmail() throws Exception {
 
-			/* Olhar as configurações de SMTP de seu email */
-			Properties properties = new Properties();
-			properties.put("mail.smtp.auth", "true"); /* Autorização */
-			properties.put("mail.smtp.starttls", "true"); /* Autenticação */
-			properties.put("mail.smtp.host", "smtp.gmail.com"); /* Servidor gmail google */
-			properties.put("mail.smtp.port", "465"); /* prota do servidor */
-			properties.put("mail.smtp.socketFactory.port", "465"); /* Porta usada pelo Socket */
-			properties.put("mail.smtp.socketFactory.class",
-					"javax.net.ssl.SSLSocketFactory"); /* Classe de socket de conexão SMTP */
-
-			Session session = Session.getDefaultInstance(properties, new Authenticator() {
-
-				@Override
-				protected PasswordAuthentication getPasswordAuthentication() {
-
-					return new PasswordAuthentication(userName, senha);
-				}
-			});
-
-			Address[] toUser = InternetAddress.parse("jerusoalves0@gmail.com, jeruso.nascimento@gmail.com");
-			
-			Message message = new MimeMessage(session);
-			
-			message.setFrom(new InternetAddress(userName)); /*Quem está enviando*/	
-			message.setRecipients(Message.RecipientType.TO, toUser); /*Quem vai receber*/
-			message.setSubject("Chegou o email enviado com JAVA");/*Assunto do email*/
-			message.setText("Se você recebeu esse email porque está tudo ok");/*Corpo do email*/
-			
-			Transport.send(message);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		/*Nesse teste os parametros são destinatário, Nome de quem está enviando, assunto e mensagem*/
+		ObjetoEnviaEmail enviaEmail = new ObjetoEnviaEmail("jerusoalves0@gmail.com", "Jeruso Alves",
+				"Testando Email", "Esse é apenas um teste de email");
+		
+		enviaEmail.enviarEmail();
+		/*
+		 * caso de erro no envio coloque tempo na Thread --> descomente a linha abaixo
+		 */
+		Thread.sleep(1000);
 	}
+
 }
