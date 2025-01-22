@@ -1,36 +1,43 @@
 package enviando.Email;
 
-import java.util.Properties;
-
-import javax.mail.Address;
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * Unit test for the ObjetoEnviaEmail class.
  */
 public class AppTest {
 
-	private String userName = "jeruso.nascimento@gmail.com";
-	private String senha = "krhh izcu inzf ybcy";
+    @Test
+    public void testeEmail() {
+        try {
+        	
+        	StringBuilder stringBuilderTextoEmail = new StringBuilder();
+        	
+        	stringBuilderTextoEmail.append("Olá <br/><br/>");
+        	stringBuilderTextoEmail.append("Você está recebendo o seu acesso do seu curso de JAVA <br/><br/>");
+        	stringBuilderTextoEmail.append("Para ter acesso click no botão abaixo<br/><br/>");
+        	
+        	stringBuilderTextoEmail.append("<a traget=\"_blanck\" href=\"https://projetojavaweb.com/certificado-aluno/login\">Acessar Portal do aluno</a>");
+        	
+        	
+        	String destinatarios = "jerusoalves0@gmail.com, jeruso.nascimento@gmail.com";
+        	
+        	ObejetoEnviaEmail enviaEmail = new ObejetoEnviaEmail(
+                    destinatarios, 
+                    "Jeruso Alves Java", 
+                    "Email enviado com JAVA", 
+                    stringBuilderTextoEmail.toString()
+            );
 
-	@org.junit.Test
-	public void testeEmail() throws Exception {
+            enviaEmail.enviarEmail(true);
 
-		/*Nesse teste os parametros são destinatário, Nome de quem está enviando, assunto e mensagem*/
-		ObjetoEnviaEmail enviaEmail = new ObjetoEnviaEmail("jerusoalves0@gmail.com", "Jeruso Alves",
-				"Testando Email", "Esse é apenas um teste de email");
-		
-		enviaEmail.enviarEmail();
-		/*
-		 * caso de erro no envio coloque tempo na Thread --> descomente a linha abaixo
-		 */
-		Thread.sleep(1000);
-	}
+            // Simple assertion for demonstration (add meaningful assertions as needed)
+            Assert.assertTrue("Email was sent successfully!", true);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Email sending failed: " + e.getMessage());
+        }
+    }
 }
