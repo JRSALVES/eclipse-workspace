@@ -32,8 +32,8 @@ public class AppTest {
 			String destinatarios = "jerusoalves0@gmail.com, jeruso.nascimento@gmail.com"; //Field to enter recipients
 
 			//Creating issuer name and subject
-			ObejetoEnviaEmail enviaEmail = new ObejetoEnviaEmail(destinatarios, "Jeruso Alves Java",
-					"Email enviado com JAVA", stringBuilderTextoEmail.toString());
+			ObejetoEnviaEmail enviaEmail = new ObejetoEnviaEmail(destinatarios, "Jeruso Curso Java",
+					"Teste envio e-mail com Java", stringBuilderTextoEmail.toString());
 
 			enviaEmail.enviarEmail(true);
 
